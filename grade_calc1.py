@@ -51,7 +51,6 @@ def error_message(n, typ, mi, ma):   # error messages used in error_check, to nu
 
 
 def main():
-    os.system("cls")
     credit_tot = 0      # credit total set to 0
     alist = []          # empty list
 
