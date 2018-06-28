@@ -30,7 +30,9 @@ def error_check(n, value, type, max, min, mod):
             if truevalue % 5 != 0:
                 error_message(3, type, min, max)
                 return user_input(n)
-            
+            else:
+                return truevalue
+
         else:
             return truevalue
 
