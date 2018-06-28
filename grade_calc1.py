@@ -11,27 +11,27 @@ def user_input(n):
         grade = input("Please input your grade: ")
         checked_grade = error_check(2, grade, float, 100, 0, 0)
         return float(checked_grade)
-        
+
     else:
         credit = input("How many credits was this module worth? ")
-        error_check(3, credit, int, 50, 0, 5)
-        try:
-            return int(credit)
-        except ValueError:
-            error_message(1, int, 0, 0)
+        checked_credit = error_check(3, credit, int, 50, 0, 5)
+        return int(checked_credit)
+
 
 def error_check(n, value, type, max, min, mod):
     try:
-        realvalue = type(value)
-        if realvalue > max or realvalue <= min:
+        truevalue = type(value)
+
+        if truevalue > max or truevalue <= min:
             error_message(2, type, min, max)
             return user_input(n)
+
         elif mod is not 0:
-            if realvalue % 5 != 0:
+            if truevalue % 5 != 0:
                 error_message(3, type, min, max)
                 return user_input(n)
         else:
-            return realvalue
+            return truevalue
 
     except ValueError:
         error_message(1, type, min, max)
